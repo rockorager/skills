@@ -1,6 +1,6 @@
 # Agent Skills
 
-A collection of reusable [Agent Skills](https://docs.anthropic.com/en/docs/claude-code/skills) for agents.
+A collection of reusable [Agent Skills](https://docs.anthropic.com/en/docs/claude-code/skills).
 
 ## Usage
 
