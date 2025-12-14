@@ -1,6 +1,6 @@
 ---
 name: commit-messages
-description: Write clear commit messages. Use when asked to write a commit message, prepare a commit, or describe changes for version control.
+description: Write clear commit messages. Use when asked to commit changes, write a commit message, prepare a commit, or describe changes for version control.
 ---
 
 # Commit Messages
