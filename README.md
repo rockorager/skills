@@ -14,4 +14,5 @@ ln -s /path/to/this/repo ~/.claude/skills
 
 | Skill | Description |
 |-------|-------------|
+| [commit-messages](commit-messages/SKILL.md) | Write clear commit messages (requires [git-hunks](https://github.com/rockorager/git-hunks)) |
 | [compiler-explorer](compiler-explorer/SKILL.md) | Optimize functions by generating and analyzing compiler assembly output |
