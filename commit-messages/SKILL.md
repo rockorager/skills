@@ -3,46 +3,49 @@ name: commit-messages
 description: Write clear commit messages. Use when asked to commit changes, write a commit message, prepare a commit, or describe changes for version control.
 ---
 
-# Commit Messages
+# Committing Changes
 
-Write clear, informative commit messages following conventional commit format.
+Make small, atomic commits with clear messages.
 
 ## Workflow
 
-### 1. Analyze the Changes
+### 1. Understand the Changes
+
+If you don't already understand the changes, review them first:
 
 ```bash
-# View staged changes
-git diff --cached
-
-# View all uncommitted changes
 git diff HEAD
-
-# See changed files summary
 git status --short
 ```
 
-### 2. Write the Message
+### 2. Stage and Commit
 
-**Commit Message Format:**
-- Limit the first line (title) to 60 characters maximum
-- Use a short prefix for readability with git log --oneline (do not use "fix:" or "feature:" prefixes)
-- Use only lowercase letters for the commit title except when quoting symbols or known acronyms
-- Address only one issue/topic per commit
-- Use imperative mood (e.g. "make xyzzy do frotz" instead of "makes xyzzy do frotz")
-
-**Commit Message Body:**
-- Use the body to explain what your patch does and why it is useful
-- Even for one-line fixes, the description may span multiple paragraphs
-- Use proper English syntax, grammar and punctuation
-- Write in imperative mood as if giving orders to the codebase
-
-**Commit Trailers:**
-- If fixing a ticket, use appropriate commit trailers
-- If fixing a regression from another commit, add a "Fixes:" trailer with the commit id and title
-
-### 3. Commit
+Make small, atomic commits—each commit should address one logical change. If your work spans multiple concerns (e.g., a refactor and a bug fix), break it into separate commits.
 
 ```bash
-git commit -m "type(scope): subject" -m "body paragraph"
+# Stage entire files
+git add <files>
+
+# Or stage specific hunks for finer control
+git hunks list                            # List all hunks with IDs
+git hunks add 'file:@-old,len+new,len'    # Stage specific hunks by ID
+
+git commit -m "title" -m "body paragraph"
 ```
+
+### 3. Commit Message Format
+
+**Title (first line):**
+- Limit to 60 characters maximum
+- Use lowercase except for symbols or acronyms
+- Use imperative mood ("add feature" not "adds feature")
+- Use a short prefix for readability in `git log --oneline` (avoid "fix:" or "feature:" prefixes)
+
+**Body:**
+- Explain what the change does and why
+- Use proper grammar and punctuation
+- Use imperative mood throughout
+
+**Trailers:**
+- If fixing a ticket, add appropriate trailers
+- If fixing a regression, add a "Fixes:" trailer with the commit id and title
